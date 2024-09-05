@@ -7,7 +7,7 @@ app.listen(port, () => {
     console.log(`Server Running on ${port}`);
 })
 
-// 1) Reverse string 
+// 1) REVERSE STRING
 
 //  builtin function
 function strRev(value) {
@@ -32,7 +32,7 @@ function reverseString(str) {
 // -------------------------------------------------------------------------------------------
 
 
-// 2) Bubble Sort
+// 2) BUBBLE SORT
 
 //  builtin function
 const numbers = [64, 25, 12, 22, 11];
@@ -56,5 +56,59 @@ function bbl(arr) {
 }
 
 // console.log(bbl(numbers));  //output : [ 11, 12, 22, 25, 64 ]
+
+
+// ----------------------------------------------------------------------------------
+
+// 3) LINEAR SEARCH
+
+// builtin fn
+
+const ln = numbers.indexOf(22)
+// console.log(ln);  input const numbers = [64, 25, 12, 22, 11];  //output : [2]
+
+
+// normal
+
+function linearSr(arr, trg) {
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] === trg) {
+            return i
+        }
+    }
+    return -1
+}
+const val = [10, 20, 30, 40, 50];
+// console.log(linearSr(val , 50))  //output 4
+
+// -----------------------------------------------------------------------------------
+
+
+// 4)REMOVING DUPLICATE FROM ARRAY 
+
+// inbuilt fn
+const dpArr = [10, 1, 11, 10, 20]
+
+const newArr = [...new Set(dpArr)]
+// console.log(newArr);  output : [ 10, 1, 11, 20 ]
+
+
+// normal
+
+function removeArr(arr) {
+    let uq = []
+    for (i = 0; i < arr.length; i++) {
+        if (uq.indexOf(arr[i]) === -1) {
+            uq.push(arr[i])
+        }
+    }
+    return uq
+}
+
+// console.log(removeArr(dpArr));
+
+
+
+
 
 
