@@ -107,7 +107,32 @@ function removeArr(arr) {
 
 // console.log(removeArr(dpArr));
 
+// -------------------------------------------------------------------
 
+
+// 5) Find Max Element in array
+
+// built-in fn
+
+const numb = [64, 25, 12, 22, 11];
+const maxNumbers = (Math.max(...numb))
+// console.log(maxNumbers);   //outpuut 64
+
+
+// normal
+
+function findMax(arr) {
+    let max = arr[0]
+    for (i = 1; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i]
+        }
+    }
+    return max
+}
+
+
+// console.log(findMax(numb)); //output 64
 
 
 
