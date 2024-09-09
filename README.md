@@ -1,10 +1,31 @@
-Solving DSA in JS
-With  Built-In function and without Built-In function
+# Solving DSA in JS
+ =====================
 
-Run a node server using express
-Step: Npm init -> Npm install nodemon express -> npx nodemon server.js
+This repository contains solutions to various Data Structures and Algorithms (DSA) problems in JavaScript. The solutions are implemented with and without using built-in functions.
 
-## server.js
+## Table of Contents
+-----------------
+
+* [Getting Started](#getting-started)
+* [Running the Node Server](#running-the-node-server)
+* [DSA Solutions](#dsa-solutions)
+
+## Getting Started
+---------------
+
+To get started, follow these steps:
+
+### Step 1: Initialize the Project
+
+Run the following command to initialize the project:
+```bash
+npm init
+npm install nodemon express
+npx nodemon server.js
+
+-----------------
+### server.js
+
 const express = require('express')
 const app = express()
 const port = 3000
