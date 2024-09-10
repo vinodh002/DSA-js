@@ -134,6 +134,38 @@ function findMax(arr) {
 
 // console.log(findMax(numb)); //output 64
 
+// ------------------------------------------------------------------
+
+// 6) Fibonnaci sequence
+
+// Built-in Function
+
+function fibonacci(n) {
+    return Array.from({ length: n }, () => 0).reduce((acc, _, i) => {
+        if (i <= 1) return [...acc, i];
+        return [...acc, acc[i - 1] + acc[i - 2]];
+    }, []);
+}
+
+// Generate the first 10 numbers in the Fibonacci sequence
+//   console.log(fibonacci(10));  //output [ 0, 1, 1, 2, 3, 5, 8, 13, 21, 34 ]
+
+// normal
+
+function fbN (n){
+    const fib = [0,1]
+    for(i =2 ; i < n ; i++){
+        fib[i] = fib[i-1] + fib [i-2]
+    }
+    return fib
+}
+
+// console.log(fbN(6)); //outut [ 0, 1, 1, 2, 3, 5 ]
+
+// --------------------------------------------------------------------------------
+
+
+
 
 
 
