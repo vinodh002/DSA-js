@@ -152,10 +152,10 @@ function fibonacci(n) {
 
 // normal
 
-function fbN (n){
-    const fib = [0,1]
-    for(i =2 ; i < n ; i++){
-        fib[i] = fib[i-1] + fib [i-2]
+function fbN(n) {
+    const fib = [0, 1]
+    for (i = 2; i < n; i++) {
+        fib[i] = fib[i - 1] + fib[i - 2]
     }
     return fib
 }
@@ -163,6 +163,91 @@ function fbN (n){
 // console.log(fbN(6)); //outut [ 0, 1, 1, 2, 3, 5 ]
 
 // --------------------------------------------------------------------------------
+
+
+// 7) Flattening a Nested Array 
+
+// Built-in function
+
+
+// const nestedArray = [1, [2, [3, [10, 11, 12, [13, 14], 15, 16], 4], 5], 6];
+// const flatArr = nestedArray.flat(Infinity)
+// console.log(flatArr);
+
+
+// normal
+
+function flattenArray(arr) {
+    let result = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (Array.isArray(arr[i])) {
+            result = result.concat(flattenArray(arr[i]));
+        } else {
+            result.push(arr[i])
+        }
+    }
+    return result
+}
+
+const nestedArray = [1, [2, [3, [10, 11, 12, [13, 14], 15, 16], 4], 5], 6];
+// console.log(flattenArray(nestedArray)); // output [ 1,  2,  3, 10, 11, 12, 13, 14, 15, 16,  4,  5,   6]
+
+// ------------------------------------------------------------------------
+
+
+// 8) Random Numbers
+
+// Built-in function and normal 
+
+function genarateRandom(n) {
+    return Math.floor(Math.random() * n)
+}
+// console.log(genarateRandom(10)); output random number 1 to 9
+
+// -------------------------------------------------------------------------
+
+
+// 9) Binary Search
+
+
+// Built-in function 
+
+const bnSerach = [2, 3, 4, 10, 40];
+bnSerach.sort((a, b) => a - b); // Ensure array is sorted
+const target = 10;
+const index = bnSerach.findIndex(x => x === target);
+// console.log(index !== -1 ? index : -1); // Output: 3
+
+
+// Normal
+
+function binarySearch(arr, trg) {
+    let left = 0
+    let right = arr.length - 1
+
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2)
+
+        if (arr[mid] === trg) {
+            return mid
+        }
+        else if (arr[mid] < trg) {
+            left = mid + 1
+        }
+        else {
+            right = mid - 1
+        }
+    }
+    return -1
+}
+
+const r = [2, 3, 4, 10, 40];
+// console.log(binarySearch(r, 10)); // Output: 3
+// console.log(binarySearch(r, 5));  // Output: -1
+
+
+
+
 
 
 
