@@ -245,6 +245,116 @@ const r = [2, 3, 4, 10, 40];
 // console.log(binarySearch(r, 10)); // Output: 3
 // console.log(binarySearch(r, 5));  // Output: -1
 
+// ---------------------------------------------------------------------------------------
+
+// 10) Palindrome
+
+// Built-In function
+
+function isPalin(str) {
+    return str === str.split("").reverse("").join("")
+
+}
+
+// console.log(isPalin("ten")); //output false
+// console.log(isPalin("non")); //output true
+
+// Normal
+
+function isP(str) {
+    let p = str.length
+    for (i = 0; i < p / 2; i++) {
+        if (str[i] !== str[p - i - 1]) {
+            return false
+        }
+    }
+    return true
+}
+
+// console.log(isP("bob"));//output true
+// console.log(isP("bobs"));//output false
+
+// ----------------------------------------------------------------------------
+
+// 11)Remove specific element from array
+
+// Built-In Function
+
+const vr = [1, 3, 4, 5, 6, 7]
+const newVr = vr.filter(el => el !== 4)
+// console.log(newVr); // [ 1, 3, 5, 6, 7 ]
+
+// Normal
+
+function nr(arr, trg) {
+    let result = []
+    for (i = 0; i < arr.length; i++) {
+        if (arr[i] !== trg) {
+            result.push(arr[i])
+        }
+    }
+    return result
+}
+
+
+const q = [1, 1, 12, 34, 32,]
+// console.log(nr(q, 1));  // Output [ 12, 34, 32 ]
+
+
+// ------------------------------------------------------------------------------------
+
+
+// 12) MERGE TWO SORTED ARRAYS
+
+// Built-In function
+
+const arr1 = [1, 55, 100]
+const arr2 = [2, 45, 900]
+
+const mrg = [...arr1, ...arr2].sort((a, b) => a - b)
+// console.log(mrg); // Output [ 1, 2, 45, 55, 100, 900 ]
+
+
+// Normal
+
+function mrgArr(arr1, arr2) {
+    let merged = []
+    let i = 0; j = 0
+
+    while (i < arr1[i] && j < arr2[j]) {
+        if (arr1[i] < arr2[j]) {
+            merged.push(arr1[i])
+            i++
+        } else {
+            merged.push(arr2[j])
+            j++
+        }
+    }
+
+    while (i < arr1[i]) {
+        merged.push(arr1[i])
+        i++
+    }
+    while (j < arr2[j]) {
+        merged.push(arr2[j])
+        j++
+    }
+    return merged
+}
+
+// console.log(mrgArr(arr1, arr2)); //Output [ 1, 2, 45, 55, 900, 100 ]
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
