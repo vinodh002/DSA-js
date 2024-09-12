@@ -317,32 +317,23 @@ const mrg = [...arr1, ...arr2].sort((a, b) => a - b)
 
 // Normal
 
-function mrgArr(arr1, arr2) {
-    let merged = []
-    let i = 0; j = 0
-
-    while (i < arr1[i] && j < arr2[j]) {
-        if (arr1[i] < arr2[j]) {
-            merged.push(arr1[i])
-            i++
-        } else {
-            merged.push(arr2[j])
-            j++
+function mrgArr(a,b){
+    for(i=0; i < b.length; i++){
+        a.push(b[i])
+    }
+    for(i=0; i < a.length; i++){
+        for(j= i+1; j < a.length; j++){
+            if(a[i]>a[j]){
+                [a[i],a[j]] = [a[j],a[i]]
+            }
         }
     }
-
-    while (i < arr1[i]) {
-        merged.push(arr1[i])
-        i++
-    }
-    while (j < arr2[j]) {
-        merged.push(arr2[j])
-        j++
-    }
-    return merged
+    return a
 }
 
-// console.log(mrgArr(arr1, arr2)); //Output [ 1, 2, 45, 55, 900, 100 ]
+console.log(mrgArr(arr1, arr2)); //Output [ 1, 2, 45, 55, 900, 100 ]
+
+
 
 
 
