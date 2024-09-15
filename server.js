@@ -317,23 +317,47 @@ const mrg = [...arr1, ...arr2].sort((a, b) => a - b)
 
 // Normal
 
-function mrgArr(a,b){
-    for(i=0; i < b.length; i++){
+function mrgArr(a, b) {
+    for (i = 0; i < b.length; i++) {
         a.push(b[i])
     }
-    for(i=0; i < a.length; i++){
-        for(j= i+1; j < a.length; j++){
-            if(a[i]>a[j]){
-                [a[i],a[j]] = [a[j],a[i]]
+    for (i = 0; i < a.length; i++) {
+        for (j = i + 1; j < a.length; j++) {
+            if (a[i] > a[j]) {
+                [a[i], a[j]] = [a[j], a[i]]
             }
         }
     }
     return a
 }
 
-console.log(mrgArr(arr1, arr2)); //Output [ 1, 2, 45, 55, 900, 100 ]
+// console.log(mrgArr(arr1, arr2)); //Output [ 1, 2, 45, 55, 900, 100 ]
 
 // ----------------------------------------------------------------------------------
+
+// 13) Factorial Number
+
+// Built-in
+
+function factorial(n) {
+    return Array.from({ length: n }, (_, i) => i + 1).reduce((acc, val) => acc * val, 1);
+}
+
+// console.log(factorial(5)); // Output: 120
+
+// Normal
+
+
+function facto(n) {
+    if (n === 0 || n === 1) {
+        return n
+    }
+    else {
+        return n * facto(n - 1)
+    }
+}
+
+// console.log(facto(4)); //output 24
 
 
 
