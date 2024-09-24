@@ -363,37 +363,37 @@ function facto(n) {
 
 // 14) STACK
 
-// class Stack {
-//     constructor() {
-//       this.items = []; 
-//     }
+class Stack {
+    constructor() {
+      this.items = []; 
+    }
 
-//     isEmpty() {
-//       return this.items.length === 0;
-//     }
+    isEmpty() {
+      return this.items.length === 0;
+    }
 
-//     push(ele) {
-//       this.items.push(ele);
-//     }
+    push(ele) {
+      this.items.push(ele);
+    }
 
-//     pop() {
-//       if (this.items.length === 0) return "No elements"; 
-//       return this.items.pop(); // Return the popped element
-//     }
+    pop() {
+      if (this.items.length === 0) return "No elements"; 
+      return this.items.pop(); // Return the popped element
+    }
 
-//     peek() {
-//       if (this.items.length === 0) return "No elements"; // Handle empty case for peek
-//       return this.items[this.items.length - 1];
-//     }
+    peek() {
+      if (this.items.length === 0) return "No elements"; // Handle empty case for peek
+      return this.items[this.items.length - 1];
+    }
 
-//     printStack() {
-//       let str = "";
-//       for (let i = 0; i < this.items.length; i++) { // Fixed loop condition
-//         str += this.items[i] + " ";
-//       }
-//       return str.trim(); // Remove trailing space
-//     }
-//   }
+    printStack() {
+      let str = "";
+      for (let i = 0; i < this.items.length; i++) { // Fixed loop condition
+        str += this.items[i] + " ";
+      }
+      return str.trim(); // Remove trailing space
+    }
+  }
 
 //   const newStack = new Stack();
 //   newStack.push("Apple");
@@ -451,10 +451,10 @@ class Queue {
   
   // Testing the Queue
   
-  const newQueue = new Queue();
-  newQueue.enqueue("Apple");
-  newQueue.enqueue("Ball");
-  newQueue.enqueue("Cat");
+//   const newQueue = new Queue();
+//   newQueue.enqueue("Apple");
+//   newQueue.enqueue("Ball");
+//   newQueue.enqueue("Cat");
   
 //   console.log(newQueue.printQueue()); // Output: Apple Ball Cat
 //   console.log(newQueue.peek()); // Output: Apple (first element)
