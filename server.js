@@ -365,35 +365,35 @@ function facto(n) {
 
 class Stack {
     constructor() {
-      this.items = []; 
+        this.items = [];
     }
 
     isEmpty() {
-      return this.items.length === 0;
+        return this.items.length === 0;
     }
 
     push(ele) {
-      this.items.push(ele);
+        this.items.push(ele);
     }
 
     pop() {
-      if (this.items.length === 0) return "No elements"; 
-      return this.items.pop(); // Return the popped element
+        if (this.items.length === 0) return "No elements";
+        return this.items.pop(); // Return the popped element
     }
 
     peek() {
-      if (this.items.length === 0) return "No elements"; // Handle empty case for peek
-      return this.items[this.items.length - 1];
+        if (this.items.length === 0) return "No elements"; // Handle empty case for peek
+        return this.items[this.items.length - 1];
     }
 
     printStack() {
-      let str = "";
-      for (let i = 0; i < this.items.length; i++) { // Fixed loop condition
-        str += this.items[i] + " ";
-      }
-      return str.trim(); // Remove trailing space
+        let str = "";
+        for (let i = 0; i < this.items.length; i++) { // Fixed loop condition
+            str += this.items[i] + " ";
+        }
+        return str.trim(); // Remove trailing space
     }
-  }
+}
 
 //   const newStack = new Stack();
 //   newStack.push("Apple");
@@ -408,58 +408,97 @@ class Stack {
 
 
 
+// ---------------------------------------------------------------------------------
+
+// 15)QUEUE
+
 class Queue {
     constructor() {
-      this.items = []; // Initialize the queue with an empty array
+        this.items = []; // Initialize the queue with an empty array
     }
-  
+
     // Check if the queue is empty
     isEmpty() {
-      return this.items.length === 0;
+        return this.items.length === 0;
     }
-  
+
     // Add an element to the end of the queue
     enqueue(ele) {
-      this.items.push(ele);
+        this.items.push(ele);
     }
-  
+
     // Remove an element from the front of the queue
     dequeue() {
-      if (this.isEmpty()) {
-        return "No elements in the queue";
-      }
-      return this.items.shift(); // Removes the first element
+        if (this.isEmpty()) {
+            return "No elements in the queue";
+        }
+        return this.items.shift(); // Removes the first element
     }
-  
+
     // Peek at the front element without removing it
     peek() {
-      if (this.isEmpty()) {
-        return "No elements in the queue";
-      }
-      return this.items[0]; // Returns the first element
+        if (this.isEmpty()) {
+            return "No elements in the queue";
+        }
+        return this.items[0]; // Returns the first element
     }
-  
+
     // Print all elements in the queue
     printQueue() {
-      let str = "";
-      for (let i = 0; i < this.items.length; i++) {
-        str += this.items[i] + " ";
-      }
-      return str.trim();
+        let str = "";
+        for (let i = 0; i < this.items.length; i++) {
+            str += this.items[i] + " ";
+        }
+        return str.trim();
     }
-  }
-  
-  // Testing the Queue
-  
+}
+
+// Testing the Queue
+
 //   const newQueue = new Queue();
 //   newQueue.enqueue("Apple");
 //   newQueue.enqueue("Ball");
 //   newQueue.enqueue("Cat");
-  
+
 //   console.log(newQueue.printQueue()); // Output: Apple Ball Cat
 //   console.log(newQueue.peek()); // Output: Apple (first element)
 //   newQueue.dequeue();
 //   console.log(newQueue.peek()); // Output: Ball (next first element)
 //   console.log(newQueue.printQueue()); // Output: Ball Cat
-  
 
+
+// --------------------------------------------------------------------------------
+
+
+// 16)FIND SECOND LARGEST NUMBER INN ARRAY
+
+// BuiltIn Funnction
+
+function secondMax(arr) {
+    arr.sort((a, b) => a - b).reverse()
+    return arr[1]
+}
+
+const mxS = [123, 2, 43, 33, 54]
+// console.log(secondMax(mxS)) //Output 54
+
+
+// Normal
+
+
+function secondMx(arr) {
+    let max = -Infinity
+    let scnd = -Infinity
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            scnd = max
+            max = arr[i]
+        }
+        else if (arr[i] > scnd && arr[i] !== max) {
+            scnd = arr[i]
+        }
+    }
+    return scnd
+}
+
+// console.log(secondMx(mxS)); //Output 54
