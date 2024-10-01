@@ -502,3 +502,110 @@ function secondMx(arr) {
 }
 
 // console.log(secondMx(mxS)); //Output 54
+
+// --------------------------------------------------------------------------
+
+// 17) SUM OF ARRAY
+
+// Built-In Function
+
+const array = [1, 2, 3, 4, 5];
+
+function sumArr(arr) {
+    return arr.reduce((acc, cur) => acc + cur, 0)
+}
+
+// console.log(sumArr(array)); //Output : 15
+
+// Normal 
+// 1) ITERATIVE
+
+function sumArray(arr) {
+    let x = 0;        // declare zero here
+    for (let i = 0; i < arr.length; i++) {
+        x += arr[i]
+    }
+    return x
+}
+
+// console.log(sumArray(array)); //Output : 15
+
+// 2) RECURSIVE 
+
+function recSum(arr, n) {
+    if (n <= 0) {
+        return 0
+    }
+    return arr[n - 1] + recSum(arr, n - 1)
+}
+
+// console.log(recSum(array , array.length));  //Output : 15
+
+// -------------------------------------------------------------------------------
+
+
+// 18) REVERSING WORDS IN A STRING 
+
+// Built-In Function 
+
+function reverseWords(str) {
+    const wordsArray = str.split(" ");
+    const reversedArray = wordsArray.reverse();
+    return reversedArray.join(" ");
+}
+
+const inputString = "Hello World from JavaScript";
+// console.log(reverseWords(inputString)); // Output: "JavaScript from World Hello"
+
+
+// Normal
+
+function reverseWordLoop(str) {
+    let wrds = str.split(" ")
+    let resultWords = ""
+
+    for (let i = wrds.length - 1; i >= 0; i--) {
+        resultWords += wrds[i] + " "
+    }
+    return resultWords.trim()
+}
+
+// console.log(reverseWordLoop(inputString));  // Output: "JavaScript from World Hello"
+
+
+// ----------------------------------------------------------------------------------------
+
+
+// 19) FIND THE MISSING NUMBER IN ARRAY
+
+
+// Built-In Function
+
+
+function findMissingNumberWithBuiltIn(arr) {
+    const n = arr.length + 1; // Total count including the missing number
+    const expectedSum = (n * (n + 1)) / 2; // Sum of first n natural numbers
+    const actualSum = arr.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+
+    return expectedSum - actualSum;
+}
+
+const arrayNum = [1, 2, 3, 5, 6];
+// console.log(findMissingNumberWithBuiltIn(arrayNum)); // Output: 4
+
+
+// Normal 
+
+function findMissingNumber(arr) {
+    const n = arr.length + 1
+    const expected = (n * (n + 1)) / 2
+    let actual = 0
+
+    for (let i = 0; i < arr.length; i++) {
+        actual += arr[i]
+    }
+    return  expected - actual
+}
+
+// console.log(findMissingNumber(arrayNum)); // Output: 4
+
