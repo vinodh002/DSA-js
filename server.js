@@ -604,8 +604,66 @@ function findMissingNumber(arr) {
     for (let i = 0; i < arr.length; i++) {
         actual += arr[i]
     }
-    return  expected - actual
+    return expected - actual
 }
 
 // console.log(findMissingNumber(arrayNum)); // Output: 4
 
+// -------------------------------------------------------------------------------------
+
+// 20) Count the Letters in Strings
+
+
+function countLetters(str){
+    let result = {}
+    let strEle = str.toLowerCase()
+
+    for(let char of strEle){
+        if(/[a-z]/.test(char)){
+            result[char] = (result[char] || 0) + 1
+        }
+    }
+    return result
+}
+// console.log(countLetters("Wolverine")) //Output { w: 1, o: 1, l: 1, v: 1, e: 2, r: 1, i: 1, n: 1 }
+
+// ---------------------------------------------------------------------------------------
+
+// 21) Numbers to Words
+
+function numberToWords(num){
+    const words = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
+
+    let numEle = num.toString()
+    let result = ''
+
+    for(let i=0; i <numEle.length ; i++){
+        let digit = numEle[i]
+        if(!isNaN(digit)){
+            result += words[digit] + ' '
+        }
+        else{
+            result = words + ' '
+        }
+    }
+    return result.trim()
+}
+
+// Example usage:
+let cardNumber = '78012';
+// console.log(numberToWords(cardNumber)); //Output Seven Eight Zero One Two
+// 20)Count the Letters in string
+
+function countLetters(str) {
+    let strEle = str.toLowerCase()
+    let letterCount = {}
+
+    for (let char of strEle) {
+        if (/[a-z]/.test(char)) {
+            letterCount[char] = (letterCount[char] || 0) + 1;
+        }
+    }
+    return letterCount
+}
+
+// console.log(countLetters("Bijju")); //Output { b: 1, i: 1, j: 2, u: 1 }
