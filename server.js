@@ -604,8 +604,23 @@ function findMissingNumber(arr) {
     for (let i = 0; i < arr.length; i++) {
         actual += arr[i]
     }
-    return  expected - actual
+    return expected - actual
 }
 
 // console.log(findMissingNumber(arrayNum)); // Output: 4
 
+// 20)Count the Letters in string
+
+function countLetters(str) {
+    let strEle = str.toLowerCase()
+    let letterCount = {}
+
+    for (let char of strEle) {
+        if (/[a-z]/.test(char)) {
+            letterCount[char] = (letterCount[char] || 0) + 1;
+        }
+    }
+    return letterCount
+}
+
+// console.log(countLetters("Bijju")); //Output { b: 1, i: 1, j: 2, u: 1 }
