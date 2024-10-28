@@ -652,3 +652,18 @@ function numberToWords(num){
 // Example usage:
 let cardNumber = '78012';
 // console.log(numberToWords(cardNumber)); //Output Seven Eight Zero One Two
+// 20)Count the Letters in string
+
+function countLetters(str) {
+    let strEle = str.toLowerCase()
+    let letterCount = {}
+
+    for (let char of strEle) {
+        if (/[a-z]/.test(char)) {
+            letterCount[char] = (letterCount[char] || 0) + 1;
+        }
+    }
+    return letterCount
+}
+
+// console.log(countLetters("Bijju")); //Output { b: 1, i: 1, j: 2, u: 1 }
