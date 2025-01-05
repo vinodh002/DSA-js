@@ -614,12 +614,12 @@ function findMissingNumber(arr) {
 // 20) Count the Letters in Strings
 
 
-function countLetters(str){
+function countLetters(str) {
     let result = {}
     let strEle = str.toLowerCase()
 
-    for(let char of strEle){
-        if(/[a-z]/.test(char)){
+    for (let char of strEle) {
+        if (/[a-z]/.test(char)) {
             result[char] = (result[char] || 0) + 1
         }
     }
@@ -631,18 +631,18 @@ function countLetters(str){
 
 // 21) Numbers to Words
 
-function numberToWords(num){
+function numberToWords(num) {
     const words = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
 
     let numEle = num.toString()
     let result = ''
 
-    for(let i=0; i <numEle.length ; i++){
+    for (let i = 0; i < numEle.length; i++) {
         let digit = numEle[i]
-        if(!isNaN(digit)){
+        if (!isNaN(digit)) {
             result += words[digit] + ' '
         }
-        else{
+        else {
             result = words + ' '
         }
     }
@@ -654,16 +654,18 @@ let cardNumber = '78012';
 // console.log(numberToWords(cardNumber)); //Output Seven Eight Zero One Two
 // 20)Count the Letters in string
 
-function countLetters(str) {
-    let strEle = str.toLowerCase()
-    let letterCount = {}
-
-    for (let char of strEle) {
-        if (/[a-z]/.test(char)) {
-            letterCount[char] = (letterCount[char] || 0) + 1;
+function firstNonRepeatedChar(str) {
+    const charCount = {};
+    for (const char of str) {
+        charCount[char] = (charCount[char] || 0) + 1;
+    }
+    for (const char of str) {
+        if (charCount[char] === 1) {
+            return char;
         }
     }
-    return letterCount
+    return null;
 }
 
-// console.log(countLetters("Bijju")); //Output { b: 1, i: 1, j: 2, u: 1 }
+
+// console.log(firstNonRepeatedChar("anjaneya"));  // Output: "j"
