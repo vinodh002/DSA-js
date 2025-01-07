@@ -614,12 +614,12 @@ function findMissingNumber(arr) {
 // 20) Count the Letters in Strings
 
 
-function countLetters(str){
+function countLetters(str) {
     let result = {}
     let strEle = str.toLowerCase()
 
-    for(let char of strEle){
-        if(/[a-z]/.test(char)){
+    for (let char of strEle) {
+        if (/[a-z]/.test(char)) {
             result[char] = (result[char] || 0) + 1
         }
     }
@@ -631,18 +631,18 @@ function countLetters(str){
 
 // 21) Numbers to Words
 
-function numberToWords(num){
+function numberToWords(num) {
     const words = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
 
     let numEle = num.toString()
     let result = ''
 
-    for(let i=0; i <numEle.length ; i++){
+    for (let i = 0; i < numEle.length; i++) {
         let digit = numEle[i]
-        if(!isNaN(digit)){
+        if (!isNaN(digit)) {
             result += words[digit] + ' '
         }
-        else{
+        else {
             result = words + ' '
         }
     }
@@ -652,3 +652,38 @@ function numberToWords(num){
 // Example usage:
 let cardNumber = '78012';
 // console.log(numberToWords(cardNumber)); //Output Seven Eight Zero One Two
+
+
+// 22) Recursive function
+
+
+const data = {
+    "val": 10,
+    "next": {
+        "val": 5,
+        "next": {
+            "val": 15,
+            "next": {
+                "val": 20,
+                "next": {
+                    "val": 30,
+                    "something": {
+                        "val": 40
+                    }
+                }
+            }
+        }
+    }
+};
+
+
+function rec(data) {
+    if (!data) return 0
+
+    if (data.something) {
+        return data.val
+    }
+    return data.val + rec(data.next)
+}
+
+// console.log(rec(data))  //output 80
