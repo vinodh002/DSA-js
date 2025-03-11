@@ -615,12 +615,9 @@ function findMissingNumber(arr) {
 
 
 function countLetters(str) {
-function countLetters(str) {
     let result = {}
     let strEle = str.toLowerCase()
 
-    for (let char of strEle) {
-        if (/[a-z]/.test(char)) {
     for (let char of strEle) {
         if (/[a-z]/.test(char)) {
             result[char] = (result[char] || 0) + 1
@@ -635,20 +632,16 @@ function countLetters(str) {
 // 21) Numbers to Words
 
 function numberToWords(num) {
-function numberToWords(num) {
     const words = ['Zero', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine'];
 
     let numEle = num.toString()
     let result = ''
 
     for (let i = 0; i < numEle.length; i++) {
-    for (let i = 0; i < numEle.length; i++) {
         let digit = numEle[i]
-        if (!isNaN(digit)) {
         if (!isNaN(digit)) {
             result += words[digit] + ' '
         }
-        else {
         else {
             result = words + ' '
         }
