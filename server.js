@@ -719,23 +719,41 @@ function numberToWords(num) {
 // Example usage:
 let cardNumber = '78012';
 // console.log(numberToWords(cardNumber)); //Output Seven Eight Zero One Two
-// 20)Count the Letters in string
 
-function firstNonRepeatedChar(str) {
-    const charCount = {};
-    for (const char of str) {
-        charCount[char] = (charCount[char] || 0) + 1;
-    }
-    for (const char of str) {
-        if (charCount[char] === 1) {
-            return char;
+
+// 22) Recursive function
+
+
+const data = {
+    "val": 10,
+    "next": {
+        "val": 5,
+        "next": {
+            "val": 15,
+            "next": {
+                "val": 20,
+                "next": {
+                    "val": 30,
+                    "something": {
+                        "val": 40
+                    }
+                }
+            }
         }
     }
-    return null;
+};
+
+
+function rec(data) {
+    if (!data) return 0
+
+    if (data.something) {
+        return data.val
+    }
+    return data.val + rec(data.next)
 }
 
-
-// console.log(firstNonRepeatedChar("anjaneya"));  // Output: "j"
+// console.log(rec(data))  //output 80
 
 
 
@@ -772,7 +790,7 @@ function rotate(arr, k) {
 
 // ------------------------------------------------------------------------
 
-
+//23 Anagram
 function isAnagram(a, b) {
     if (a.length !== b.length) return false
     let count = {}

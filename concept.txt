@@ -1,0 +1,22 @@
+reverse String   ✅
+bubble sort     ✅
+linear search   ✅
+find max      ✅
+flatten array   ✅
+binary search ✅
+random numbers ✅
+Fibonacci Sequence ✅
+duplicate Array   ✅
+palindrome ✅
+merge two sort array✅
+remove elm from array✅
+stack✅
+queue✅
+find second largest  ✅
+sum of array ✅
+REVERSING WORDS IN A STRING ✅
+FIND THE MISSING NUMBER IN ARRAY ✅
+factorial ✅
+Count the letters in strings ✅
+Number to words ✅
+first non repeating character ✅
