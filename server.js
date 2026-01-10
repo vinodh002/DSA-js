@@ -105,6 +105,25 @@ function removeArr(arr) {
     return uq
 }
 
+// --------------------------------
+function dp(arr) {
+    let result = []
+    for (let i = 0; i < arr.length; i++) {
+        let exits = false;
+        for (let j = 0; j < arr.length; j++) {
+            if (arr[i] === result[j]) {
+                exits = true
+                break;
+            }
+        }
+        if (!exits) result[result.length] = arr[i]
+    }
+    return result
+}
+// --------------------------------
+// console.log(dp(dpArr));
+
+
 // console.log(removeArr(dpArr));
 
 // -------------------------------------------------------------------
@@ -271,6 +290,18 @@ function isP(str) {
     return true
 }
 
+function isPali(str) {
+    let left = 0;
+    let right = str.length - 1
+    while (left < right) {
+        if (str[left] !== str[right]) return false
+        left++
+        right--
+    }
+    return true
+}
+// console.log(isPali("kolok"));
+
 // console.log(isP("bob"));//output true
 // console.log(isP("bobs"));//output false
 
@@ -331,6 +362,19 @@ function mrgArr(a, b) {
     return a
 }
 
+
+function mgr(a, b) {
+    let i = 0, j = 0, result = []
+    while (i < a.length && j < b.length) {
+        if (i < a.length) result[result.length] = a[i++]
+        else result[result.length] = b[i++]
+    }
+    while (i < a.length) result[result.length] = a[i++]
+    while (j < b.length) result[result.length] = b[j++]
+    return result
+}
+// console.log(mgr(arr1,arr2));
+
 // console.log(mrgArr(arr1, arr2)); //Output [ 1, 2, 45, 55, 900, 100 ]
 
 // ----------------------------------------------------------------------------------
@@ -357,6 +401,17 @@ function facto(n) {
     }
 }
 
+
+function fact(n) {
+    let result = 1
+    for (let i = 1; i <= n; i++) {
+        result *= i
+    }
+    return result
+}
+
+
+// console.log(fact(4)); //output 24
 // console.log(facto(4)); //output 24
 
 // ---------------------------------------------------------------------------------
@@ -625,6 +680,18 @@ function countLetters(str) {
     }
     return result
 }
+
+
+function letterCount(str) {
+    let count = {}
+    for (let i = 0; i < str.length; i++) {
+        let char = str[i]
+        count[char] = count[char] ? count[char] + 1 : 1
+    }
+    return count
+}
+// console.log(letterCount("spaces"));
+
 // console.log(countLetters("Wolverine")) //Output { w: 1, o: 1, l: 1, v: 1, e: 2, r: 1, i: 1, n: 1 }
 
 // ---------------------------------------------------------------------------------------
@@ -669,3 +736,56 @@ function firstNonRepeatedChar(str) {
 
 
 // console.log(firstNonRepeatedChar("anjaneya"));  // Output: "j"
+
+
+
+
+// -----------------------------------------------------------------------------
+
+// 22 rotate by k
+
+function rotate(arr, k) {
+    let n = arr.length
+    k = k % n
+    let result = []
+    for (let i = n - k; i < n; i++) result[result.length] = arr[i]
+    for (let i = 0; i < n - k; i++) result[result.length] = arr[i]
+    return result
+}
+
+// console.log(rotate([1,2,3,4,5],2)) //output [ 4, 5, 1, 2, 3 ]
+
+// function rotateRight(arr, k) {
+//   k = k % arr.length; // handle large k
+//   return arr.slice(-k).concat(arr.slice(0, -k));
+// }
+
+// console.log(rotateRight([1,2,3,4,5], 2));  //[ 4, 5, 1, 2, 3 ]
+
+
+// function rotateLeft(arr, k) {
+//   k = k % arr.length;
+//   return arr.slice(k).concat(arr.slice(0, k));
+// }
+
+// console.log(rotateLeft([1,2,3,4,5], 2)); //[ 3, 4, 5, 1, 2 ]
+
+// ------------------------------------------------------------------------
+
+
+function isAnagram(a, b) {
+    if (a.length !== b.length) return false
+    let count = {}
+    for (let i = 0; i < a.length; i++) {
+        let char = a[i]
+        count[char] = count[char] ? count[char] +1:1
+    }
+    for (let i = 0; i < b.length; i++) {
+        let char = b[i]
+        if(!count[char]) return false
+        count[char]++
+    }
+return true
+}
+
+// console.log(isAnagram("silent","tenlis")); //true
